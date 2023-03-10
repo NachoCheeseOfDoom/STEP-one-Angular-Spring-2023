@@ -1,0 +1,12 @@
+<mat-card class="card">
+    <mat-card-header>
+        {{pokemon.name | upperCaseCustom}}
+    </mat-card-header>
+    <img mat-card-image [src]="pokemonDetails.sprites.front_default" alt="{{pokemonDetails.name}} image">
+    <mat-card-content>
+        
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button routerLink="/pokemon-details/{{pokemonDetails.name}}">View More</button>
+    </mat-card-actions>
+</mat-card>
