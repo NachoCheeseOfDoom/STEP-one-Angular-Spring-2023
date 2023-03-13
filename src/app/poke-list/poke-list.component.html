@@ -11,7 +11,8 @@
     </div>
 </div>
 <div style="background-color: gray;">
-    <div *ngFor="let pokemon of pokemonsFiltered" style="margin-bottom: 10px; max-width: 250px;" >
+    <div *ngFor="let pokemon of pokemonsFiltered"
+        style="display: inline-block; margin-left: 10px; margin-bottom: 20px; max-width: 250px;">
         <app-poke-card [pokemon]="pokemon"></app-poke-card>
     </div>
 </div>
