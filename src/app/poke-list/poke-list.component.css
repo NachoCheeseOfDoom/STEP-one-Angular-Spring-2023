@@ -1,4 +1,8 @@
-.title {
-  font-size: large;
-  color: blue;
+.cards-styles {
+  display: inline-block;
+  margin: 5px 5px;
+  max-width: 250px;
+}
+
+.child-card-list {
 }
