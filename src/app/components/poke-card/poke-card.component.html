@@ -1,9 +1,16 @@
 <mat-card class="card">
     <mat-card-header>
         {{pokemon.name | upperCaseCustom}}
-        {{pokemon.name.types | upperCaseCustom}}
+        {{ pokemonDetails.types && pokemonDetails.types.length>0 ? pokemonDetails.types[0].type.name: ''}}
+        <!-- {{ getmove()}} -->
+        <ul>
+            <li class="cards-styles" *ngFor="let moves of pokemonDetails.moves">
+                {{moves.move.name}}
+            </li>
+        </ul>
+
     </mat-card-header>
-    <img mat-card-image [src]="pokemonDetails.sprites.back_default" alt="{{pokemonDetails.name}} image">
+    <img mat-card-image [src]="pokemonDetails.sprites?.back_default" alt="{{pokemonDetails.name}} image">
     <mat-card-content>
 
     </mat-card-content>

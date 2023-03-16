@@ -20,7 +20,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPokemonList(): any {
-    return this.http.get<any>(`${this.pokeURL}pokemon/?limit=151`, this.httpOptions)
+    return this.http.get<any>(`${this.pokeURL}pokemon/?limit=15`, this.httpOptions)
       .pipe(
         map((data: any) => data.results), retry(1)
       )
@@ -32,10 +32,10 @@ export class ApiService {
     )
   }
 
-  getPokemonByType(types: any): Observable<PokemonDetails> {
-    return this.http.get<PokemonDetails>(`${this.pokeURL}pokemon/${types}`, this.httpOptions).pipe(
-      map((data: any) => data), retry(17)
-    )
-  }
+  // getPokemonByType(types: any): Observable<any> {
+  //   return this.http.get<PokemonDetails>(`${this.pokeURL}pokemon/${types}`, this.httpOptions).pipe(
+  //     map((data: any) => data), catch((callback: any) => {}), retry(2)
+  //   )
+  // }
 
 }

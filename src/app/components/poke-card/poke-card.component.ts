@@ -10,8 +10,9 @@ import { NewPageComponent } from 'src/app/new-page/new-page.component';
 })
 export class PokeCardComponent {
 
-    pokemonDetails!: PokemonDetails;
-    @Input('pokemon') pokemon: any = { name: '', types: '' };
+    pokemonDetails: PokemonDetails = { name: '', types: [] };
+    @Input('pokemon') pokemon: any = { name: '' };
+    // @Input('pokemon') pokemons: any = { types: '' };
     constructor(private apiService: ApiService) { }
 
     ngOnInit(): void {
@@ -19,11 +20,15 @@ export class PokeCardComponent {
             this.pokemonDetails = result;
         });
 
-        this.apiService.getPokemonByType(this.pokemon.types).subscribe(result => {
-            this.pokemonDetails = result;
-        })
+        // this.apiService.getPokemonByType(this.pokemon.types).subscribe(result => {
+        //     this.pokemonDetails = result;
+        // })
 
         this.apiService.getPokemonList
+    }
+
+    getmove() {
+        return this.pokemonDetails.moves && this.pokemonDetails.moves.length > 0 ? this.pokemonDetails.moves[0].move.name : ''
     }
 
 }
