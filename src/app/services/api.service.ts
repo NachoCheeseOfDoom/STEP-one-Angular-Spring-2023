@@ -21,14 +21,20 @@ export class ApiService {
 
   getPokemonList(): any {
     return this.http.get<any>(`${this.pokeURL}pokemon/?limit=151`, this.httpOptions)
-    .pipe(
-      map((data: any) => data.results), retry(1)
-    )
+      .pipe(
+        map((data: any) => data.results), retry(1)
+      )
   }
 
   getPokemonByName(name: string): Observable<PokemonDetails> {
     return this.http.get<PokemonDetails>(`${this.pokeURL}pokemon/${name}`, this.httpOptions).pipe(
       map((data: any) => data), retry(1)
+    )
+  }
+
+  getPokemonByType(types: any): Observable<PokemonDetails> {
+    return this.http.get<PokemonDetails>(`${this.pokeURL}pokemon/${types}`, this.httpOptions).pipe(
+      map((data: any) => data), retry(17)
     )
   }
 

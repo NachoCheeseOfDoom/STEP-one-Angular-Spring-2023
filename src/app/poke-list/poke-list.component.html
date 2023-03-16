@@ -1,4 +1,31 @@
-<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"> Navbar</a>
+    <i class="bi bi-android2"></i>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="new-page">Page Component</a>
+            </li>
+        </ul>
+        <ul>
+            <img src="../images/Pokemon.png" alt="Pokiball">
+
+        </ul>
+        <form>
+            <input class="form-control mr-sm-2" #findPokemon type="text" matInput placeholder="Find Pokemons"
+                (keyup)="filterPokemons(findPokemon.value)">
+        </form>
+    </div>
+</nav>
+<!-- <div>
     <div>
         <form>
             <mat-form-field appearance="fill" class="mx-2">
@@ -9,9 +36,9 @@
             </mat-form-field>
         </form>
     </div>
-</div>
+</div> -->
 <div style=" background-color: rgba(220, 220, 220, 0.748);">
     <div class="cards-styles" *ngFor="let pokemon of pokemonsFiltered">
-        <app-poke-card class="child-card-list" [pokemon]="pokemon"></app-poke-card>
+        <app-poke-card [pokemon]="pokemon"></app-poke-card>
     </div>
 </div>

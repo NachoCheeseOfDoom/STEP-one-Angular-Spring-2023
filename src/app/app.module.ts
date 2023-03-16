@@ -18,6 +18,8 @@ import { PokeListComponent } from './poke-list/poke-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { UpperCaseCustomPipe } from './pipes/upper-case-custom.pipe';
+import { NewPageComponent } from './new-page/new-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { UpperCaseCustomPipe } from './pipes/upper-case-custom.pipe';
     PokeListComponent,
     PokemonDetailsComponent,
     PokeCardComponent,
-    UpperCaseCustomPipe
+    UpperCaseCustomPipe,
+    NewPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

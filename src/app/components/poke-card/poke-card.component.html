@@ -1,8 +1,9 @@
-<mat-card style="background-color: rgba(255, 0, 0, 0.697);" class="card">
+<mat-card class="card">
     <mat-card-header>
         {{pokemon.name | upperCaseCustom}}
+        {{pokemon.name.types | upperCaseCustom}}
     </mat-card-header>
-    <img mat-card-image [src]="pokemonDetails.sprites.front_default" alt="{{pokemonDetails.name}} image">
+    <img mat-card-image [src]="pokemonDetails.sprites.back_default" alt="{{pokemonDetails.name}} image">
     <mat-card-content>
 
     </mat-card-content>
