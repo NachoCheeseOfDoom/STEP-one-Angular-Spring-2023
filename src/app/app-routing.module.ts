@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: 'pokemon-details/:name', component: PokemonDetailsComponent },
     { path: 'new-page', component: NewPageComponent },
     { path: '**', component: PageNotFoundComponent },
+    // { path: '**', component: PageNotFoundComponent },
 ]
 
 @NgModule({

@@ -1,1 +1,120 @@
 hello Pokemon Details
+
+<p>this is the name: {{details.name}}</p>
+<img [src]="details.sprites?.front_default" alt="{{details.name}} image">
+<p>this is the type: {{details.types[0].type.name}}</p>
+<p>Moves:{{getMove()}}</p>
+
+<ol>
+  <li *ngFor="let moves of details.moves| slice:0:3; let i=index">
+    <!-- {{moves.move[0].name}} -->
+    {{details.moves[i].move.name}}
+  </li>
+</ol>
+
+<!-- <ol>
+  <li class="cards-styles" *ngFor="let moves of details.moves[0].move.name| slice:0:3; let i=index">
+    {{getMove()}}
+  </li>
+</ol> -->
+<p>this is the form: {{details.forms[0].name}}</p>
+<p>something here {{details.moves[0].move.name}}</p>
+
+<!-- this.pokemonDetails.moves[0].move.name -->
+
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img [src]="details.sprites?.front_default" alt="{{details.name}} image"
+                class="img-fluid img-thumbnail mt-4 mb-2" style="width: 150px; z-index: 1">
+            </div>
+            <div class="ms-3" style="margin-top: 130px; margin-left: 10px;">
+              <h5 style="font-size: 20px; font-weight: bold;">{{details.name | upperCaseCustom}}</h5>
+              <p>{{details.types[0].type.name}}</p>
+            </div>
+          </div>
+          <div class="p-4 text-black" style="background-color: #f8f9fa;">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div>
+                <p class="mb-1 h5">{{details.weight}}</p>
+                <p class="small text-muted mb-0">Weight lb</p>
+              </div>
+              <div class="px-3">
+                <p class="mb-1 h5">{{details.height}}</p>
+                <p class="small text-muted mb-0">Height ft</p>
+              </div>
+              <div>
+                <p class="mb-1 h5">{{details.base_experience}}</p>
+                <p class="small text-muted mb-0">XP</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">About</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <ol>
+                  <li *ngFor="let moves of details.moves| slice:0:4; let i=index">
+                    <!-- {{moves.move[0].name}} -->
+                    {{details.moves[i].move.name}}
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vh-100" style="background-color: #9de2ff;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-9 col-lg-7 col-xl-5">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-4">
+            <div class="d-flex text-black">
+              <div class="flex-shrink-0" id="img-div">
+                <img [src]="details.sprites?.front_default" alt="{{details.name}} image" class="img-fluid"
+                  style="width: 150px;">
+              </div>
+              <div class="flex-grow-1 ms-3">
+                <h5 class="mb-1" style="font-size: 15px; font-weight: bold;">{{details.name | upperCaseCustom}}</h5>
+                <p class="mb-2 pb-1" style="color: #2b2a2a;">{{details.types[0].type.name}}</p>
+                <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                  style="background-color: #efefef; text-align: center;">
+                  <div>
+                    <p class="small text-muted mb-1">Weight lb</p>
+                    <p class="mb-0" style="">{{details.weight}}</p>
+                  </div>
+                  <div class="px-3">
+                    <p class="small text-muted mb-1">Height ft</p>
+                    <p class="mb-0">{{details.height}}</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted mb-1">XP</p>
+                    <p class="mb-0">{{details.base_experience}}</p>
+                  </div>
+                </div>
+                <p class="lead fw-normal mb-1">Moves</p>
+                <div class="p-2" style="background-color: #f8f9fa;">
+                  <ol>
+                    <li *ngFor="let moves of details.moves| slice:0:4; let i=index">
+                      <!-- {{moves.move[0].name}} -->
+                      {{details.moves[i].move.name}}
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

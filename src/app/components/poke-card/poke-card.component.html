@@ -1,20 +1,47 @@
-<mat-card class="card">
-    <mat-card-header>
+<!-- <div class="container"> -->
+
+
+<mat-card [className]="'card '+ pokemonType" routerLink="/pokemon-details/{{pokemonDetails.name}}">
+    <mat-card-header class="card-header-class" id="card-header">
         {{pokemon.name | upperCaseCustom}}
-        {{ pokemonDetails.types && pokemonDetails.types.length>0 ? pokemonDetails.types[0].type.name: ''}}
+        <!-- {{ pokemonDetails.types && pokemonDetails.types.length>0 ? pokemonDetails.types[0].type.name: ''}} -->
         <!-- {{ getmove()}} -->
-        <ul>
-            <li class="cards-styles" *ngFor="let moves of pokemonDetails.moves">
+        {{ getType()}}
+
+        <!-- <ol>
+            <li class="cards-styles" *ngFor="let moves of pokemonDetails.moves| slice:0:3; let i=index">
                 {{moves.move.name}}
             </li>
-        </ul>
+        </ol> -->
+
+        <!-- <ol>
+            <li class="cards-styles" *ngFor="let abilities of pokemonDetails.abilities">
+                {{abilities.ability.name}}
+
+            </li>
+        </ol> -->
+
+
+        <!-- <ol>
+            <li class="cards-styles" *ngFor="let types of pokemonDetails.types">
+                {{types.type.name}}
+            </li>
+        </ol> -->
 
     </mat-card-header>
-    <img mat-card-image [src]="pokemonDetails.sprites?.back_default" alt="{{pokemonDetails.name}} image">
-    <mat-card-content>
+    <img style="margin: auto;" mat-card-image [src]="pokemonDetails.sprites?.front_default"
+        alt="{{pokemonDetails.name}} image">
+    <!-- <p id="pokemon-type-id"> {{changeColor(getType()) }}</p> -->
 
-    </mat-card-content>
-    <mat-card-actions>
+    <!-- <mat-card-content>
+
+    </mat-card-content> -->
+    <!-- <mat-card-actions>
         <button mat-raised-button routerLink="/pokemon-details/{{pokemonDetails.name}}">View More</button>
-    </mat-card-actions>
+    </mat-card-actions> -->
+    <!-- <mat-card-content id="lower-text">
+        <p>something</p>
+    </mat-card-content> -->
 </mat-card>
+
+<!-- </div>  -->

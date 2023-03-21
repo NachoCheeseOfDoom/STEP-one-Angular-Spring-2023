@@ -20,5 +20,25 @@ export class PokemonDetailsComponent {
     ngOnInit(): void {
         this.name = this.activatedRoute.snapshot.params['name'];
         this.apiService.getPokemonByName(this.name).subscribe(result => this.details = result)
+        console.log(this.name)
+        // console.log('this is a ' + this.details.type + ' pokemon')
+
+    }
+
+
+    // pokemonMoves() {
+    //     for (let i = 0; i < this.details.moves.move.namelength; i++) {
+    //         const element = this.details.moves.move.name[i];
+    //         return element;
+    //     }
+    // }
+
+    getMove() {
+        return this.details.moves && this.details.moves.length > 0 ? this.details.moves[0].move.name : ''
+    }
+
+    getType() {
+
+        return this.details.types && this.details.types.length > 0 ? this.details.types[0].type.name : ''
     }
 }

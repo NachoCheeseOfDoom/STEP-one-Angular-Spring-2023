@@ -20,7 +20,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getPokemonList(): any {
-    return this.http.get<any>(`${this.pokeURL}pokemon/?limit=15`, this.httpOptions)
+    return this.http.get<any>(`${this.pokeURL}pokemon/?limit=150`, this.httpOptions)
       .pipe(
         map((data: any) => data.results), retry(1)
       )
