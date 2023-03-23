@@ -1,0 +1,18 @@
+#meme-generator,
+#button-action {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 13px 34px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+#meme-generator:hover,
+#button-action:hover {
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.16);
+}
+
+.meme-img {
+  width: 500px;
+  height: 300px;
+}

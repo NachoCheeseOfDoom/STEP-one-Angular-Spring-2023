@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ApiService } from './services/api.service';
+import { MemeApiService } from './services/meme-api.service';
 
 import { PokeListComponent } from './poke-list/poke-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
@@ -20,6 +21,7 @@ import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { UpperCaseCustomPipe } from './pipes/upper-case-custom.pipe';
 import { NewPageComponent } from './new-page/new-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TextLengthPipe } from './pipes/text-length.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PokeCardComponent,
     UpperCaseCustomPipe,
     NewPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TextLengthPipe,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatInputModule,
     MatIconModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, MemeApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

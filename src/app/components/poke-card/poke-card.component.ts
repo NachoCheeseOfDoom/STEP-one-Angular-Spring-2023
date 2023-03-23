@@ -17,48 +17,9 @@ export class PokeCardComponent {
 
     ngOnInit(): void {
         const card: any = document.querySelector('.card');
-        const typeEl: any = document.getElementById('lower-text');
         this.apiService.getPokemonByName(this.pokemon.name).subscribe(result => {
             this.pokemonDetails = result;
-
-
-            // if (this.getType() == 'bug') {
-            //     card.style.backgroundColor = "green";
-            //     // document.getElementById('card-id')!.style.color = 'red';
-            //     console.log(this.pokemonDetails.name)
-            // }
-
-
-
-            // switch (this.getType()) {
-            //     case 'grass':
-            //         console.log(this.pokemonDetails.name)
-
-            //         // typeEl.innerHTML = 'Grass'
-            //         break;
-            //     case 'fire':
-            //         console.log(this.pokemonDetails.name)
-            //         // typeEl.innerHTML = 'Fire'
-            //         // card.style.backgroundColor = 'red';
-            //         // console.log(this.getAbility())
-            //         break;
-            //     case 'water':
-
-            //         break;
-            //     case 'bug':
-            //         // console.log(this.pokemonDetails.name)
-
-            //         break;
-
-
-            // }
-
         });
-
-        // this.apiService.getPokemonByType(this.pokemon.types).subscribe(result => {
-        //     this.pokemonDetails = result;
-        // })
-
         this.apiService.getPokemonList
     }
 
@@ -74,11 +35,8 @@ export class PokeCardComponent {
         return this.pokemonDetails.abilities && this.pokemonDetails.abilities.length > 0 ? this.pokemonDetails.abilities[0].ability.name : ''
     }
 
-    changeColor() {
-        if (this.getType() === 'fire') {
-            let cardEl = document.getElementById('card-id');
-            cardEl!.style.backgroundColor = "red";
-        }
+    textHere(text: string) {
+        return text
     }
 
 
@@ -86,25 +44,5 @@ export class PokeCardComponent {
         return this.getType()
 
     }
-
-    // changeColor(type: String) {
-    //     switch (type) {
-    //         case 'grass':
-
-    //             break;
-    //         case 'fire':
-
-    //             break;
-    //         case 'water':
-
-    //             break;
-    //         case 'bug':
-    //             let algo: String = document.getElementById('pokemon-type-id');
-    //             algo.innerHTML != 'This is a bug';
-    //             break;
-
-
-    //     }
-    // }
 
 }

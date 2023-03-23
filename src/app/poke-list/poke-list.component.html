@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- <a class="navbar-brand" href="#"> Navbar</a> -->
-    <img src="assets/images/Pokemon.png" href="#" alt="Pokiball" />
+    <img class="pokeball-img" src="assets/images/Pokemon.png" href="#" alt="Pokiball" />
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,13 +15,9 @@
                 <a class="nav-link" href="new-page">Page Component</a>
             </li>
         </ul>
-        <ul>
-            <!-- <img src="assets/images/Pokemon.png" alt="Pokiball" /> -->
-            <!-- <img src="./images/pokeball.png" alt="..." class="img-thumbnail" /> -->
 
-        </ul>
         <form>
-            <input class="form-control mr-sm-2" #findPokemon type="text" matInput placeholder="Find Pokemons"
+            <input class="form-control mr-sm-2" #findPokemon type="text" matInput placeholder="Find Pokemon"
                 (keyup)="filterPokemons(findPokemon.value)">
         </form>
     </div>

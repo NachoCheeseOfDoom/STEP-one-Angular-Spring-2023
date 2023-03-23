@@ -41,4 +41,9 @@ export class PokemonDetailsComponent {
 
         return this.details.types && this.details.types.length > 0 ? this.details.types[0].type.name : ''
     }
+
+    get pokemonType(): string {
+        return this.getType()
+
+    }
 }

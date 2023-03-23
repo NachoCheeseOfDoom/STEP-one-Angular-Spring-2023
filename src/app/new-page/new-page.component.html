@@ -1,1 +1,74 @@
-<p>new-page works!</p>
+<div class="container vh-100 z-depth-1 my-5 px-0">
+
+  <!--Section: Content-->
+  <section class="p-5 my-md-5 text-center"
+    style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg); background-size: cover; background-position: center center;">
+
+    <!-- Section heading -->
+    <h3 class="text-center font-weight-bold text-white mt-5 mb-3">Ingresa algo</h3>
+    <!-- Section description -->
+    <h4 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">Te devolveré la cantidad de letras que
+      contiene la palabra</h4>
+
+    <form class="mb-5 mx-md-5" action="">
+
+      <div class="row">
+        <div class="col-md-4 mb-4">
+
+          <!-- Name -->
+          <!-- <input type="text" id="name" class="form-control" placeholder="Name"> -->
+
+        </div>
+        <div class="col-md-4 mb-4">
+
+          <input type="text" id="palabraIngresada" class="form-control" placeholder="Ingresa algo">
+
+        </div>
+        <div class="col-md-4 mb-4">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <!-- <div class="form-group mb-4">
+            <textarea class="form-control rounded" id="message" rows="3" placeholder="How can we help?"></textarea>
+          </div> -->
+          <p id="shows-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <div class="text-center">
+
+            <button id="button-action" type="button" class="btn btn-elegant">Submit</button>
+
+            <button id="meme-generator" (click)=" generateMeme()" type="button" class="btn btn-elegant">Generate
+              Meme</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </section>
+  <!--Section: Content-->
+  <!-- <img id="memeImg" class="meme-img" [src]="meme.url"> -->
+
+  <!-- meme image -->
+  <form class="mb-5 mx-md-5" action="">
+    <div class="row">
+      <div class="col-md-3 mb-3">
+
+      </div>
+      <div class="col-md-6 mb-6">
+
+        <img id="memeImg" class="meme-img" [src]="meme.url">
+
+      </div>
+      <div class="col-md-3 mb-3">
+
+      </div>
+    </div>
+  </form>
+
+</div>
