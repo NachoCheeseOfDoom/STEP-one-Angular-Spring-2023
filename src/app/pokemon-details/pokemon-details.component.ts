@@ -20,7 +20,7 @@ export class PokemonDetailsComponent {
     ngOnInit(): void {
         this.name = this.activatedRoute.snapshot.params['name'];
         this.apiService.getPokemonByName(this.name).subscribe(result => this.details = result)
-        console.log(this.name)
+        // console.log(this.name)
         // console.log('this is a ' + this.details.type + ' pokemon')
 
     }

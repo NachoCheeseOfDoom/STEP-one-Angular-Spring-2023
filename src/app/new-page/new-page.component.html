@@ -1,16 +1,21 @@
-<div class="container vh-100 z-depth-1 my-5 px-0">
+<div class="container vh-50 z-depth-1 my-5 px-0">
 
   <!--Section: Content-->
-  <section class="p-5 my-md-5 text-center"
+  <section class="p-5 my-md-2 text-center"
     style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg); background-size: cover; background-position: center center;">
 
     <!-- Section heading -->
-    <h3 class="text-center font-weight-bold text-white mt-5 mb-3">Ingresa algo</h3>
+    <h3 class="text-center font-weight-bold text-white mt-5 mb-3">How many leters</h3>
     <!-- Section description -->
-    <h4 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">Te devolveré la cantidad de letras que
-      contiene la palabra</h4>
+    <h4 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">Enter something and I will return the amount
+      of characters</h4>
 
-    <form class="mb-5 mx-md-5" action="">
+    <!-- <form action="" [formGroup]="this.formGroup_">
+      <input formControlName="word" name="" id="" cols="30" rows="10">
+      <button (click)="wordValue($event)">Click me</button>
+    </form> -->
+
+    <form class="mb-5 mx-md-5" action="" [formGroup]="this.formGroup_">
 
       <div class="row">
         <div class="col-md-4 mb-4">
@@ -21,7 +26,9 @@
         </div>
         <div class="col-md-4 mb-4">
 
-          <input type="text" id="palabraIngresada" class="form-control" placeholder="Ingresa algo">
+          <!-- 👇 -->
+          <input formControlName="word" type="text" id="palabraIngresada" class="form-control" placeholder="Enter text">
+          <!-- 👆 -->
 
         </div>
         <div class="col-md-4 mb-4">
@@ -35,13 +42,20 @@
           <!-- <div class="form-group mb-4">
             <textarea class="form-control rounded" id="message" rows="3" placeholder="How can we help?"></textarea>
           </div> -->
-          <p id="shows-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <!-- 👇 -->
+          <p id="shows-text">The word you wrote is: <strong>{{showFormControls(formGroup_)}}</strong> and it has this
+            many characters: <strong>{{showFormControls(formGroup_) | textLength}}</strong></p>
+          <!-- 👆 -->
           <div class="text-center">
 
-            <button id="button-action" type="button" class="btn btn-elegant">Submit</button>
+            <!-- 👇 -->
+            <!-- <button (click)="wordValue($event)" id="button-action" type="button" class="btn btn-elegant">Submit</button> -->
+            <!-- 👆 -->
+            <app-meme-frame>
+              <!-- <button id="meme-generator" (click)=" generateMeme()" type="button" class="btn btn-elegant">Generate
+                Meme</button> -->
+            </app-meme-frame>
 
-            <button id="meme-generator" (click)=" generateMeme()" type="button" class="btn btn-elegant">Generate
-              Meme</button>
           </div>
 
         </div>
@@ -51,24 +65,6 @@
     </form>
 
   </section>
-  <!--Section: Content-->
-  <!-- <img id="memeImg" class="meme-img" [src]="meme.url"> -->
 
-  <!-- meme image -->
-  <form class="mb-5 mx-md-5" action="">
-    <div class="row">
-      <div class="col-md-3 mb-3">
-
-      </div>
-      <div class="col-md-6 mb-6">
-
-        <img id="memeImg" class="meme-img" [src]="meme.url">
-
-      </div>
-      <div class="col-md-3 mb-3">
-
-      </div>
-    </div>
-  </form>
 
 </div>

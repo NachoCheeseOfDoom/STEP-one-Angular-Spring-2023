@@ -22,6 +22,8 @@ import { UpperCaseCustomPipe } from './pipes/upper-case-custom.pipe';
 import { NewPageComponent } from './new-page/new-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TextLengthPipe } from './pipes/text-length.pipe';
+import { MemeFrameComponent } from './components/meme-frame/meme-frame.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { TextLengthPipe } from './pipes/text-length.pipe';
     NewPageComponent,
     PageNotFoundComponent,
     TextLengthPipe,
+    MemeFrameComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { TextLengthPipe } from './pipes/text-length.pipe';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [ApiService, MemeApiService],
   bootstrap: [AppComponent]
